@@ -1,0 +1,35 @@
+.utility-navbar{
+    /* background-color: #2a56a7; */
+    border-top: 1px solid #ede9e9;
+}
+.utility-nav-items{
+    padding: 0px;
+    text-align: center;
+}
+.utility-nav-item{
+    padding: 10px 25px;
+}
+li{
+    display: inline-block;
+}
+.utility-link{
+    text-decoration: none;
+    color:aaa;
+
+}
+
+.utility-link:focus,
+.utility-link:hover {
+    color:#555;
+    text-decoration: none
+}
+
+.utility-link:active{
+/* 
+    .utility-nav-item{
+        color: #5cb85c;
+        border-bottom: 2px solid #5cb85c;
+    
+    } */
+  
+}

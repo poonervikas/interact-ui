@@ -1,0 +1,56 @@
+<div class="interact-navbar">
+  <div class="container">
+    <a class="interact-navbar-brand link" routerLink="/">interact</a>
+    <!-- Show this for logged out users -->
+    <ul class="interact-nav-items">
+
+      <!-- <li class="interact-nav-item">
+        <a class="interact-nav-link link" routerLink="/">
+          Home
+        </a>
+      </li> -->
+      <li class="interact-nav-item">
+        <a class="interact-nav-link link" routerLink="events/search" routerLinkActive="active">Search</a>
+      </li>
+
+      <li class="interact-nav-item">
+        <a class="interact-nav-link link" routerLink="/login" routerLinkActive="active">Sign in</a>
+      </li>
+      <li class="interact-nav-item">
+        <a class="interact-nav-link link" routerLink="/register" routerLinkActive="active">Sign up</a>
+      </li>
+
+    </ul>
+
+    <!-- Show this for logged in users -->
+    <!-- <ul *appShowAuthed="true" class="">
+
+      <li class="">
+        <a class="" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          Home
+        </a>
+      </li>
+
+      <li class="">
+        <a class="" routerLink="/editor" routerLinkActive="active">
+          <i class="ion-compose"></i>&nbsp;New Article
+        </a>
+      </li>
+
+      <li class="">
+        <a class="" routerLink="/settings" routerLinkActive="active">
+          <i class="ion-gear-a"></i>&nbsp;Settings
+        </a>
+      </li>
+
+      <li class="">
+        <a class="" [routerLink]="['/profile', currentUser.username]" routerLinkActive="active">
+          <img [src]="currentUser.image" *ngIf="currentUser.image" class="user-pic" />
+          {{ currentUser.username }}
+        </a>
+      </li>
+
+    </ul> -->
+
+  </div>
+</div>
