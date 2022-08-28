@@ -1,0 +1,15 @@
+<div class="ask-question-container">
+    <form [formGroup]="askQuestionForm" (ngSubmit)="askQuestion()">
+        <textarea placeholder="Type your question..." appTextareaAutoresize class="ask-question-input" formControlName="question"></textarea>
+
+        <div class="ask-question-info" *ngIf="isInputFocus">
+            <!-- <span class="">i will contain info</span> -->
+            <span [ngClass]="numberOfCharactersLeftClass" class="character-limit">{{numberOfCharactersLeft}}</span>
+        </div>
+        <div class="ask-question-footer" *ngIf="isInputFocus">
+            <button class="btn-ask-question" type="submit" [disabled]="!askQuestionForm.valid">{{askQuestionData.btnText}}</button>
+        </div>
+    </form>
+</div>
+<!-- (focus)="toggleAskQuestionInputFocus(true)" 
+        (blur)="toggleAskQuestionInputFocus(false)" -->

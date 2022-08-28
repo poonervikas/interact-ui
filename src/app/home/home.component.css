@@ -32,16 +32,3 @@
     font-style: oblique;
   }
 
-  .btn-get-started{
-    background: #5cb85c;
-    color: white;
-    border: #5cb85c;
-    display: inline-block;
-    font: 700 1rem SlidoSansFont,SlidoSansFont-fallback,verdana,arial,sans-serif;
-    padding: 0.9375rem 2rem;
-    border: 0.0625rem solid #39ac37;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-  }

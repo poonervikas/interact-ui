@@ -1,8 +1,17 @@
-<h1>Event hai ye</h1>
 <!-- <app-utility-navbar></app-utility-navbar> -->
-<mat-tab-group mat-align-tabs="start">
+<!-- <mat-tab-group mat-align-tabs="start">
     <mat-tab label="QnA" routerLink="qna" >Content 1111</mat-tab>
     <mat-tab label="Polls" routerLink="polls" >Content 2</mat-tab>
     <mat-tab label="Surveys" routerLink="surveys" >Content 3</mat-tab>
-</mat-tab-group>
+</mat-tab-group> -->
+<!-- <router-outlet></router-outlet> -->
+
+<!-- <nav mat-tab-nav-bar [backgroundColor]="background" [tabPanel]="tabPanel" animationDuration="2000ms"> -->
+<nav mat-tab-nav-bar mat-align-tabs="center">
+    <a mat-tab-link *ngFor="let link of links" (click)="activeLink = link.link" [active]="activeLink == link.link"
+        [routerLink]="link.link" [disabled]="link.disabled">
+        <mat-icon class="tab-icon">{{link.icon}}</mat-icon>{{link.label}}
+    </a>
+    <!-- <a mat-tab-link disabled>Disabled Link</a> -->
+</nav>
 <router-outlet></router-outlet>

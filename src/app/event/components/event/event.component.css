@@ -1,0 +1,7 @@
+.tab-icon {
+    margin-right: 8px;
+}
+
+a.mat-tab-link.mat-focus-indicator.mat-tab-label-active {
+    color: green;
+}

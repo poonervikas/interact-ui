@@ -1,1 +1,10 @@
-<p>qna-dashboard works!</p>
+<p>Ask the speaker</p>
+<app-ask-question [eventId]="eventId"></app-ask-question>
+<div class="questions-filter-container">
+    <mat-button-toggle-group [(ngModel)]="questionFilter" (change)="onQuestionFilterChange()">
+        <mat-button-toggle value="postedAt" >Recent</mat-button-toggle>
+        <mat-button-toggle value="popular">Popular</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
+<app-questions [questions]="questions"></app-questions>

@@ -16,4 +16,10 @@ export class UserService {
     return this.http.post(environment.api_url + '/auth' + url, credentials);
   }
 
+  //Get current logged in user
+  loadUser(){
+    return this.http.get(environment.api_url+'/user/me');
+  }
+  
+
 }

@@ -1,0 +1,13 @@
+.no-data-found-container{
+    padding: 30px 15px;
+    margin-top: 5rem; 
+}
+.no-data-image{
+    margin-bottom: 30px;
+    height: 90px;
+    width: 90px;
+}
+.no-data-message{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.48);
+}

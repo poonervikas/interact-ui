@@ -11,6 +11,8 @@ import { EventsPreviewContainerComponent } from './components/events-preview-con
 import { SharedModule } from '../shared/shared.module';
 import { EventComponent } from './components/event/event.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -21,7 +23,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     EventRoutingModule,
     ReactiveFormsModule,
     SharedModule,
-    MatTabsModule
+    MatTabsModule,
+    MatIconModule,
+    MatSelectModule
   ]
 })
 export class EventModule { }

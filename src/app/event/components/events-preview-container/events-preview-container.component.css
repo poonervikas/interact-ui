@@ -1,0 +1,42 @@
+.events-action-tray {
+    text-align: left;
+    position: relative;
+}
+.mat-form-field-wrapper{
+    width: 180px !important;
+}
+.filter-container {
+    width: 180px;
+}
+
+.create-btn-container {
+    position: absolute;
+    right: 0px;
+    top:5px
+}
+
+.select-filter {
+    font-size: 14px;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgb(255, 255, 255);
+}
+
+.btn-create-event {
+    background: #5cb85c;
+    color: white;
+    border: #5cb85c;
+    display: inline-block;
+    font: 500 14px SlidoSansFont, SlidoSansFont-fallback, verdana, arial, sans-serif;
+    padding: 0.7375rem 1rem;
+    border: 0.0625rem solid #39ac37;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-create-event:hover {
+    background-color: #006600f2
+}

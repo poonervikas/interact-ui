@@ -1,0 +1,18 @@
+<div class="question-container">
+<div class="user-and-actions-container">
+    <div class="user-icon-container">
+        <span class="material-icons icon">person</span>
+    </div>
+    <div class="user-info-container">
+        <span><b class="event-name">{{question.user.name}}</b></span>   <span class="event-id">#</span>
+        <br><small class="event-time">{{question.postedAt}}</small>
+    </div>
+    <div class="question-actions-container" [ngClass]="isAlreadyLiked ?'already-liked':'not-liked-yet'" (click)="like_unlikeQuestion()">
+     <span>{{question.votes}} </span>   <span class="material-icons icon">thumb_up_alt</span>
+    </div>
+</div>
+<div class="question">
+    {{question.question}}
+</div>
+
+</div>

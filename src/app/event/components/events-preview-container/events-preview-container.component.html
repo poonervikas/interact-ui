@@ -1,3 +1,17 @@
+<!-- <app-search></app-search> -->
+<div class="events-action-tray">
+    <span class="filter-container">
+        <mat-form-field appearance="" class="select-filter">
+            <mat-label>Filter by</mat-label>
+            <mat-select [(ngModel)]="selectedFilter" name="food" (selectionChange)="onFilterChange()">
+                <mat-option *ngFor="let filter of filters" [value]="filter.value">
+                    {{filter.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </span>
+    <span class="create-btn-container"><button class="btn-create-event">+ Create Event</button></span>
+</div>
+<hr>
 <app-event-preview *ngFor="let event of events" [event]="event"></app-event-preview>
-
-<h1>okkk</h1>
+<app-no-data-found [data]="data" *ngIf="events.length==0"></app-no-data-found>

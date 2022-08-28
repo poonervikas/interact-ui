@@ -1,0 +1,66 @@
+.question-container{
+    border-radius: 8px;
+    margin: 20px 0px;
+    border: 1px solid #e7dbdb;
+    padding: 20px 15px;
+}
+.user-and-actions-container{
+    /* background-color: #f7f7f7; */
+    display: flex;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;   
+}
+
+.user-icon-container {
+    /* width: 10%; */
+    color: rgba(0, 0, 0, 0.48);
+    margin-right: 10px;
+    text-align: left;
+    border-radius: 50px;
+    background-color: rgba(57,174,55,.08);
+    height: 30px;
+    width: 30px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-info-container {
+    width: 90%;
+    text-align: left;
+}
+
+.question-actions-container {
+    height: 30px;
+    width: 30px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(57,174,55,.08);
+    border-radius: 15px;
+    width: 10%;
+    cursor: pointer;
+}
+
+p {
+    margin: 0px;
+}
+
+.question{
+    text-align: left;
+}
+.icon{
+    font-size: 14px;
+}
+
+.already-liked{
+    border: 1px solid green;
+    color: green; 
+}
+
+.not-liked-yet{
+    border: none;
+    color: rgba(0, 0, 0, 0.48);
+}
