@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store } from '@ngrx/store';
 import { QuestionService } from 'src/app/core/services/question.service';
+import { SnackBarUtils } from 'src/assets/SnackBarUtils';
 import * as fromApp from '../../../../store/app.reducer';
 
 @Component({
@@ -15,7 +17,8 @@ export class QuestionComponent implements OnInit {
 
   constructor(
     private questionService: QuestionService,
-    private store: Store<fromApp.AppState>) { }
+    private store: Store<fromApp.AppState>,
+    private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.isAlreadyLiked = this.checkIfAlreadyLiked();
@@ -28,9 +31,10 @@ export class QuestionComponent implements OnInit {
       // call unlikeQuestion service 
       this.questionService.unlikeQuestion(questionId).subscribe(
         data => {
-
+          this.snackBar.open((SnackBarUtils.MESSAGE_UNLIKE_SUCCESS),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_SUCCESS_CLASSNAME});
         }, error => {
           //smthng went wrong
+          this.snackBar.open((error.error.message || SnackBarUtils.MESSAGE_DEFAULT_ERROR),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_ERROR_CLASSNAME});
         }
       )
     }
@@ -38,14 +42,12 @@ export class QuestionComponent implements OnInit {
       //call likeQuestion service
       this.questionService.likeQuestion(questionId).subscribe(
         data=>{
-
+          this.snackBar.open((SnackBarUtils.MESSAGE_LIKE_SUCCESS),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_SUCCESS_CLASSNAME});
         },error=>{
-          
+          this.snackBar.open((error.error.message || SnackBarUtils.MESSAGE_DEFAULT_ERROR),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_ERROR_CLASSNAME});
         }
       )
-
     }
-
   }
 
   checkIfAlreadyLiked(): boolean {

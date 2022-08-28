@@ -1,6 +1,8 @@
 import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuestionService } from 'src/app/core/services/question.service';
+import { SnackBarUtils } from 'src/assets/SnackBarUtils';
 
 @Component({
   selector: 'app-ask-question',
@@ -23,33 +25,28 @@ export class AskQuestionComponent implements OnInit {
   askQuestion() {
     this.questionService.postQuestion(this.askQuestionForm.value, this.eventId).subscribe(data => {
         console.log("Question Posted Successfully!!")
+        this.snackBar.open((SnackBarUtils.MESSAGE_QUESTION_POSTED_SUCCESS),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_SUCCESS_CLASSNAME});
+
         this.askQuestionForm.setValue({question:''})
     },
       error => {
-        console.log("Error occured")
+        this.snackBar.open((error.error.message || SnackBarUtils.MESSAGE_DEFAULT_ERROR),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_ERROR_CLASSNAME});
 
       })
     console.log(this.askQuestionForm)
   }
   @HostListener('click') check() {
     this.isInputFocus = true
-    // console.log("IIIIIIIIIIIIIIIINNNNNNNNNNNNNNNNNNN")
-    // console.log(this.elementRef);
   }
 
   @HostListener('document:click', ['$event']) check2(event) {
-    // console.log(event)
-    // this.isInputFocus = false
-    // console.log("OOOOOOOOOOOOOOOUTTTTTTTTTTTTTTT")
-    // console.log(this.elementRef);
-
-
-  }
+    }
   isInputFocus: boolean = false;
 
   constructor(
     private elementRef: ElementRef,
-    private questionService: QuestionService
+    private questionService: QuestionService,
+    private snackBar:MatSnackBar
   ) { }
 
   ngOnInit(): void {
