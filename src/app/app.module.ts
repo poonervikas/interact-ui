@@ -10,12 +10,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CoreModule } from './core/core.module';
 import { EventModule } from './event/event.module';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpTokenInterceptor } from './core/interceptors/http-token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import * as fromApp from './store/app.reducer'
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
+
 
 
 @NgModule({
@@ -37,7 +39,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     // Note that you must instrument after importing StoreModule
     StoreDevtoolsModule.instrument({
       maxAge: 5
-    })
+    }),
+    NgxUiLoaderModule,  //loader for http req
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }), //loader for http req
+    HttpClientModule  //loader for http req
   ],
   providers: [
     {
