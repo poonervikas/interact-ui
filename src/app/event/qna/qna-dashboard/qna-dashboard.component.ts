@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { QuestionService } from 'src/app/core/services/question.service';
+import { QuestionService } from 'src/app/event/qna/services/question.service';
 
 @Component({
   selector: 'app-qna-dashboard',
@@ -34,6 +34,9 @@ export class QnaDashboardComponent implements OnInit {
   }
   onQuestionFilterChange(){
    this.fetchQuestions(this.questionFilter)
+  }
+  reloadQuestions(){
+    this.fetchQuestions(this.questionFilter);
   }
 
 }

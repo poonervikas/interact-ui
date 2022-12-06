@@ -10,8 +10,8 @@
             </mat-select>
         </mat-form-field>
     </span>
-    <span class="create-btn-container"><button class="btn-create-event">+ Create Event</button></span>
+    <span class="create-btn-container" (click)="openCreateEventDialog()"><button class="btn-create-event">+ Create Event</button></span>
 </div>
 <hr>
-<app-event-preview *ngFor="let event of events" [event]="event"></app-event-preview>
+<app-event-preview *ngFor="let event of events" [event]="event" (click)="goToEvent(event.eventId)"></app-event-preview>
 <app-no-data-found [data]="data" *ngIf="events.length==0"></app-no-data-found>

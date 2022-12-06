@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { RouteButtonData } from 'src/app/core/models/RouteButtonData.model';
-import { EventService } from 'src/app/core/services/event.service';
+import { EventService } from 'src/app/event/services/event.service';
 import { SnackBarUtils } from 'src/assets/SnackBarUtils';
 
 @Component({

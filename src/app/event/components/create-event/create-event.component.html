@@ -1,0 +1,50 @@
+<mat-dialog-content>
+<div class="create-event-container">
+    <div class="create-event-header">
+        <p class="dialog-heading">Schedule Event</p>
+    </div>
+    <div class="create-event-content">
+        <form [formGroup]="eventForm" (ngSubmit)="createEvent()">
+              <div class="field">
+                <label>Event name</label>
+                <div class="input-container">  
+                <input
+                  formControlName="eventName"
+                  placeholder="Event name"
+                  type="text"
+                  class="auth-input"
+                   />
+                  <!-- <small *ngIf="!authForm.controls.name.valid && authForm.controls.name.touched" >**Username is required!!</small> -->
+              </div>
+              </div>
+              <div class="field">
+                <label>Start time</label>
+                <div class="input-container">
+                <input
+                  formControlName="startTime"
+                  placeholder="Start time"
+                  class="auth-input"
+                  type="datetime-local" />
+                  <!-- <small *ngIf="!authForm.controls.emailId.valid && authForm.controls.emailId.touched" >**A valid email-id is required!!</small> -->
+                </div>
+              </div>
+              <div class="field">
+                <label>End time</label>
+                <div class="input-container">
+                    <input
+                    formControlName="expirationTime"
+                    placeholder="End time"
+                    class="auth-input"
+                    type="datetime-local" />
+                  <!-- <small *ngIf="!authForm.controls.password.valid && authForm.controls.password.touched" >**Password is required!!</small> -->
+                </div>
+              </div>
+                <div class="create-event-footer">
+                    <button class="btn btn-info"><mat-icon class="mat-icon">info</mat-icon>Anyone with the code or link can participate</button>
+                    <button class="btn btn-schedule" type="submit" [disabled]="!eventForm.valid">Schedule</button>
+                    <button class="btn btn-cancel" mat-dialog-close>Cancel</button>
+                  </div>
+        </form>
+    </div>
+</div>
+</mat-dialog-content>

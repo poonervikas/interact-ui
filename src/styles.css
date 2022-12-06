@@ -19,6 +19,23 @@ body{
     background-color: yellow !important;
     color: white !important;
 }
+
+@media screen and (min-width:600px) {
+     .mat-dialog-container{
+        width: 500px !important;
+        background-color: #39ac37;
+        color: pink;
+        padding: 14px;
+    }
+    
+}
+@media screen and  (max-width:599px) {
+    .create-event-dialog{
+        width: 100% !important;
+        padding: 10px;
+    }
+    
+}
 /* .logo-font {
     font-family: titillium web,sans-serif
 }

@@ -1,7 +1,7 @@
-import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { QuestionService } from 'src/app/core/services/question.service';
+import { QuestionService } from 'src/app/event/qna/services/question.service';
 import { SnackBarUtils } from 'src/assets/SnackBarUtils';
 
 @Component({
@@ -10,6 +10,7 @@ import { SnackBarUtils } from 'src/assets/SnackBarUtils';
   styleUrls: ['./ask-question.component.css']
 })
 export class AskQuestionComponent implements OnInit {
+  @Output() questionPosted=new EventEmitter();
 
   @Input() askQuestionData: any = {
     characterLimit: 160,
@@ -27,7 +28,8 @@ export class AskQuestionComponent implements OnInit {
         console.log("Question Posted Successfully!!")
         this.snackBar.open((SnackBarUtils.MESSAGE_QUESTION_POSTED_SUCCESS),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_SUCCESS_CLASSNAME});
 
-        this.askQuestionForm.setValue({question:''})
+        this.askQuestionForm.setValue({question:''});
+        this.questionPosted.emit();
     },
       error => {
         this.snackBar.open((error.error.message || SnackBarUtils.MESSAGE_DEFAULT_ERROR),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_ERROR_CLASSNAME});

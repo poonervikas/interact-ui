@@ -1,0 +1,66 @@
+.dialog-heading{
+    font-size: 16px;
+    font-weight: 500;
+}
+.field{
+    margin: 10px 0px;
+}
+.input-container{
+    text-align: center;
+}
+.input-container input{
+    width: 100%;
+    height: 40px;
+    padding: 0px 16px;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4.8px;
+}
+
+label{
+    color: #212529;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.create-event-footer{
+    margin-top: 20px;
+}
+.btn{
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.btn-cancel{
+    border: none;
+    background: none;
+    color: #745050d8;
+}
+.btn-cancel:hover{
+    background: #f4f4f4;
+}
+.btn-schedule{
+    background-color: #5cb85c;
+    color: white;
+    margin-right: 10px;
+}
+.btn-schedule:hover{
+    background-color: #006600f2;
+}
+.btn-info{
+    display: flex;
+    text-align: left;
+    width: 100%;
+    border:1px solid #0f62fe;
+    border-radius: 5px;
+    background-color: #ededed;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #161414;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.mat-icon{
+    color: #0f62fe;
+    font-size: 20px;
+    /* margin-right: 15px; */
+}

@@ -13,11 +13,13 @@ import { EventComponent } from './components/event/event.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import { CreateEventComponent } from './components/create-event/create-event.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
 @NgModule({
-  declarations: [EventsDashboardComponent, UtilityNavbarComponent, EventPreviewComponent, SearchComponent, EventsPreviewContainerComponent, EventComponent],
+  declarations: [EventsDashboardComponent, UtilityNavbarComponent, EventPreviewComponent, SearchComponent, EventsPreviewContainerComponent, EventComponent, CreateEventComponent],
   imports: [
     CommonModule,
     EventRoutingModule,
@@ -25,7 +27,8 @@ import {MatSelectModule} from '@angular/material/select';
     SharedModule,
     MatTabsModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ]
 })
 export class EventModule { }

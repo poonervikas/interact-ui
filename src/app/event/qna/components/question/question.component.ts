@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store } from '@ngrx/store';
-import { QuestionService } from 'src/app/core/services/question.service';
+import { QuestionService } from 'src/app/event/qna/services/question.service';
 import { SnackBarUtils } from 'src/assets/SnackBarUtils';
 import * as fromApp from '../../../../store/app.reducer';
 
@@ -15,6 +15,8 @@ export class QuestionComponent implements OnInit {
   @Input() question: any;
   isAlreadyLiked: boolean; //for switching classes of question_action_container
 
+  @Output() liked_unliked_question=new EventEmitter();
+
   constructor(
     private questionService: QuestionService,
     private store: Store<fromApp.AppState>,
@@ -26,12 +28,13 @@ export class QuestionComponent implements OnInit {
   }
   like_unlikeQuestion() {
     var questionId = this.question.questionId;
-    // var isAlreadyLiked=this.checkIfAlreadyLiked();
     if (this.isAlreadyLiked) {
       // call unlikeQuestion service 
       this.questionService.unlikeQuestion(questionId).subscribe(
         data => {
           this.snackBar.open((SnackBarUtils.MESSAGE_UNLIKE_SUCCESS),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_SUCCESS_CLASSNAME});
+          this.liked_unliked_question.emit();
+          this.isAlreadyLiked=false;
         }, error => {
           //smthng went wrong
           this.snackBar.open((error.error.message || SnackBarUtils.MESSAGE_DEFAULT_ERROR),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_ERROR_CLASSNAME});
@@ -43,6 +46,8 @@ export class QuestionComponent implements OnInit {
       this.questionService.likeQuestion(questionId).subscribe(
         data=>{
           this.snackBar.open((SnackBarUtils.MESSAGE_LIKE_SUCCESS),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_SUCCESS_CLASSNAME});
+          this.liked_unliked_question.emit();
+          this.isAlreadyLiked=true;
         },error=>{
           this.snackBar.open((error.error.message || SnackBarUtils.MESSAGE_DEFAULT_ERROR),SnackBarUtils.action,{duration:SnackBarUtils.duration,panelClass:SnackBarUtils.SNACKBAR_ERROR_CLASSNAME});
         }

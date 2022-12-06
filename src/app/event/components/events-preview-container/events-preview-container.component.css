@@ -40,3 +40,17 @@
 .btn-create-event:hover {
     background-color: #006600f2
 }
+
+/* @media screen and (min-width:600px) { */
+     .create-event-dialog{
+        width: 500px !important;
+        background-color: #39ac37;
+    }
+    
+/* 
+@media  (max-width:599px) {
+    .create-event-dialog{
+        width: 100% !important;
+    }
+    
+} */

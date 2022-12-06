@@ -16,5 +16,9 @@ export class EventService {
     return this.http.put(environment.api_url+`/event/${eventId}/join`,{});  //body is reequired for PUT eventhough we don't need it at backend
   }
 
+  createEvent(eventData){
+    return this.http.post(environment.api_url+`/event/create`,eventData);
+  }
+  
 
 }

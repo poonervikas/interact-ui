@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-questions',
@@ -8,10 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class QuestionsComponent implements OnInit {
 
   @Input() questions:any;
+  @Output() liked_unliked_question=new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void { 
+  }
+
+  reloadQuestions(){
+    this.liked_unliked_question.emit();
   }
 
 }
